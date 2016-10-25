@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<ui:composition template="WEB-INF/templates/template.xhtml">
+
+	<ui:define name="title">Registration</ui:define>
+
+	<ui:define name="content">
+
+		<p:panel header="Registration">
+			<h:form>
+				<p:panelGrid id="grid" columns="2" cellpadding="5" layout="grid">
+
+					<p:outputLabel for="firstName" value="#{msgs['registration.firstname']}" />
+					<h:panelGroup>
+						<p:inputText id="firstName" value="#{registrationBean.firstName}"
+							rendered="#{registrationBean.editable}" />
+						<p:message for="firstName" />
+						<p:outputLabel id="firstNameConfirm"
+							value="#{registrationBean.firstName}"
+							rendered="#{not registrationBean.editable}" />
+					</h:panelGroup>
+
+
+					<p:outputLabel for="lastName" value="#{msgs['registration.lastname']}" />
+					<h:panelGroup>
+						<p:inputText id="lastName" value="#{registrationBean.lastName}"
+							rendered="#{registrationBean.editable}" />
+						<p:message for="lastName" />
+						<p:outputLabel id="lastNameConfirm"
+							value="#{registrationBean.lastName}"
+							rendered="#{not registrationBean.editable}" />
+					</h:panelGroup>
+
+					<p:outputLabel for="email" value="#{msgs['registration.email']}" />
+					<h:panelGroup>
+						<p:inputText id="email" required="true"
+							value="#{registrationBean.email}"
+							rendered="#{registrationBean.editable}" />
+						<p:outputLabel id="emailConfirm" value="#{registrationBean.email}"
+							rendered="#{not registrationBean.editable}" />
+						<p:message for="email" />
+					</h:panelGroup>
+
+
+					<p:outputLabel for="dateOfBirth" value="#{msgs['registration.dateOfBirth']}" />
+					<h:panelGroup>
+
+						<p:inputText id="dateOfBirth"
+							value="#{registrationBean.dateOfBirth}"
+							rendered="#{registrationBean.editable}">
+							<f:convertDateTime type="date" pattern="yyyy/MM/dd" />
+						</p:inputText>
+
+						<p:outputLabel id="dateOfBirthConfirm"
+							value="#{registrationBean.dateOfBirth}"
+							rendered="#{not registrationBean.editable}" />
+						<p:message for="dateOfBirth" />
+					</h:panelGroup>
+					
+					<p:outputLabel for="accountNumber" value="#{msgs['registration.accountnumber']}" />
+					<h:panelGroup>
+						<p:inputText id="accountNumber"
+							value="#{registrationBean.accountNumber}"
+							rendered="#{registrationBean.editable}" />
+						<p:outputLabel id="accountNumberConfirm"
+							value="#{registrationBean.accountNumber}"
+							rendered="#{not registrationBean.editable}" />
+						<p:message for="accountNumber" />
+					</h:panelGroup>
+
+					<p:outputLabel for="gender" value="#{msgs['registration.gender']}" />
+					<h:panelGroup>
+						<p:inputText id="gender" value="#{registrationBean.gender}"
+							rendered="#{registrationBean.editable}" />
+						<p:outputLabel id="genderConfirm"
+							value="#{registrationBean.gender}"
+							rendered="#{not registrationBean.editable}" />
+						<p:message for="gender" />
+					</h:panelGroup>
+
+					<p:outputLabel for="serviceLevel" value="#{msgs['registration.serviceLevel']}" />
+					<h:panelGroup>
+						<p:inputText id="serviceLevel"
+							value="#{registrationBean.serviceLevel}"
+							rendered="#{registrationBean.editable}" />
+						<p:outputLabel id="serviceLevelConfirmConfirm"
+							value="#{registrationBean.serviceLevel}"
+							rendered="#{not registrationBean.editable}" />
+						<p:message for="serviceLevel" />
+					</h:panelGroup>
+				</p:panelGrid>
+				<p:commandButton value="Submit" id="select"
+					action="#{registrationBean.register}"
+					rendered="#{registrationBean.editable}"
+					ajax="false" />
+			</h:form>
+			<p:panelGrid columns="2" rendered="#{not registrationBean.editable}">
+				<h:form>
+					<p:panelGrid columns="2" cellpadding="5">
+						<p:commandButton action="#{registrationBean.confirm()}"
+							value="Confirm" />
+						<p:commandButton action="#{registrationBean.editInput()}"
+							value="Edit" />
+					</p:panelGrid>
+				</h:form>
+				<p:button value="Cancel" outcome="toHome" />
+			</p:panelGrid>
+		</p:panel>
+
+	</ui:define>
+</ui:composition>
+</html>

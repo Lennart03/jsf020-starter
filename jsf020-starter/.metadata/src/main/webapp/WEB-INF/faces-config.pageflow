@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14770365620270" configfile="/jsf020-starter/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="confirm.xhtml" x="122" y="2098" id="pf147703829714316" referenceLink="//@navigationRule.4/@fromViewId|" path="/confirm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registration.xhtml" x="122" y="2482" id="pf147703843999320" referenceLink="//@navigationRule.3/@navigationCase.5/@toViewId|" inlinks="pf14772972697430 pf14772972697441" path="registration.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="financial.xhtml" id="pf14772972697449" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf147729726974410" path="/financial.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index" id="pf147729726974411" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf147729726974410" path="index"/>
+  <nodes xsi:type="pageflow:PFPage" name="thanks.xhtml" id="pf147729726974412" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf147729726974413" path="/thanks.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.html" id="pf147729726974414" referenceLink="//@navigationRule.4/@navigationCase.1/@toViewId|" inlinks="pf147729726974413 pf147729726974415" path="index.html"/>
+  <nodes xsi:type="pageflow:PFPage" name="registration.xhtml" id="pf147729726974416" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14772972697430 pf147729726974415 pf147729726974417 pf14772972697441" path="/registration.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="thanks.xhtml" id="pf147729726974418" referenceLink="//@navigationRule.4/@navigationCase.2/@toViewId|" inlinks="pf147729726974417" path="thanks.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf147729773547823" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf147729938822536 pf147729938822537" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="financial" id="pf147729938822538" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf147729938822536" path="financial"/>
+  <nodes xsi:type="pageflow:PFPage" name="registration" id="pf147729938822539" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf147729938822537" path="registration"/>
+  <links id="pf147729726974410" target="pf147729726974411" source="pf14772972697449" outcome="toHome"/>
+  <links id="pf147729726974413" target="pf147729726974414" source="pf147729726974412" outcome="toHome"/>
+  <links id="pf14772972697430" target="pf147703843999320" source="pf147729726974416" outcome="toConfirm" redirect="true"/>
+  <links id="pf147729726974415" target="pf147729726974414" source="pf147729726974416" outcome="toHome" redirect="true"/>
+  <links id="pf147729726974417" target="pf147729726974418" source="pf147729726974416" outcome="toThanks" redirect="true"/>
+  <links id="pf14772972697441" target="pf147703843999320" source="pf147729726974416" outcome="edit" redirect="true"/>
+  <links id="pf147729938822536" target="pf147729938822538" source="pf147729773547823" outcome="toFinances"/>
+  <links id="pf147729938822537" target="pf147729938822539" source="pf147729773547823" outcome="toRegister"/>
+</pageflow:Pageflow>

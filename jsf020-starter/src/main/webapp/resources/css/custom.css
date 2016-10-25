@@ -1,0 +1,12 @@
+.nav-wrapper {
+	background-color: #AACF37;
+	
+}
+
+nav ul a {
+	color: #6A8B05 !important;
+}
+
+.nav-wrapper .brand-logo {
+	color: #6A8B05 !important;
+}

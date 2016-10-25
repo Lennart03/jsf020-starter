@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="WEB-INF/templates/template.xhtml">
+	<ui:define name="title">User profile</ui:define>
+	<ui:define name="content">
+		<p:panelGrid columns="2" cellpadding="5">
+			<p:outputLabel value="#{msgs['registration.firstname']}" />
+			<p:outputLabel
+				value="#{userList.getUser(param['userIndex']).firstName}" />
+			<p:outputLabel value="#{msgs['registration.lastname']}" />
+			<p:outputLabel
+				value="#{userList.getUser(param['userIndex']).lastName}" />
+			<p:outputLabel value="#{msgs['registration.email']}" />
+			<p:outputLabel value="#{userList.getUser(param['userIndex']).email}" />
+			<p:outputLabel value="#{msgs['registration.dateOfBirth']}" />
+			<p:outputLabel
+				value="#{userList.getUser(param['userIndex']).dateOfBirth}" />
+			<p:outputLabel value="#{msgs['registration.accountnumber']}" />
+			<p:outputLabel value="#{userList.getUser(param['userIndex']).gender}" />
+			<p:outputLabel value="#{msgs['registration.serviceLevel']}" />
+			<p:outputLabel
+				value="#{userList.getUser(param['userIndex']).serviceLevel}" />
+		</p:panelGrid>
+
+
+	</ui:define>
+</ui:composition>
+</html>

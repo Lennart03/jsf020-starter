@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+<ui:composition template="WEB-INF/templates/template.xhtml">
+	<ui:define name="title">Welcome</ui:define>
+	<ui:define name="content">
+		<h2>User List</h2>
+		<p:panel header="User List">
+			<p:dataTable id="userTable" value="#{userList.users}" var="user">
+				<p:column id="fistName" headerText="First Name">
+					<p:link id="firtNameText" value="#{user.firstName}" />
+				</p:column>
+				<p:column headerText="Last Name">
+					<p:outputLabel id="lastNameText" value="#{user.lastName}" />
+				</p:column>
+				<p:column>
+					<p:button class="waves-effect waves-light btn" value="View profile"
+						outcome="profile.xhtml?faces-redirect=true">
+						<f:param name="userIndex" value="#{userList.users.indexOf(user)}" />
+					</p:button>
+
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

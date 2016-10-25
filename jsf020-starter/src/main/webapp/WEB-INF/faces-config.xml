@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	<navigation-rule>
+		<from-view-id>index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>toFinances</from-outcome>
+			<to-view-id>financial</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>toRegister</from-outcome>
+			<to-view-id>registration</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/financial.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>toHome</from-outcome>
+			<to-view-id>index</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/thanks.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>toHome</from-outcome>
+			<to-view-id>index.html</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/registration.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>toConfirm</from-outcome>
+			<to-view-id>registration.xhtml
+			</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>toHome</from-outcome>
+			<to-view-id>index.html</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>toThanks</from-outcome>
+			<to-view-id>thanks.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>registration.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+			<supported-locale>nl</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>Messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+		<message-bundle>ErrMessages</message-bundle>
+	</application>
+</faces-config>
